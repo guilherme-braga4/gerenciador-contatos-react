@@ -7,7 +7,7 @@ export const Form = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: #201d1d;
+  background-color: #1ebea5;
   border-radius: 5px;
   min-width: 1150px;
   gap: 0px 50px;

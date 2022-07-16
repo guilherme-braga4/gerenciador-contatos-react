@@ -13,16 +13,14 @@ const Header = () => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const {name, value} = event.target
-    console.log('Evento do Input', event)
     setForm({...form, [name]: value})
-    console.log("form", form)
   }
 
   return (
       <Form>
           <Input
             name="email"
-            placeholder="Pesquisa por um contato"
+            placeholder="Pesquisar por um contato"
             type="email"
             onChange={handleChange}
           />

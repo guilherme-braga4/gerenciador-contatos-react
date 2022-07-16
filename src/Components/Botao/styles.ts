@@ -5,7 +5,7 @@ export const BotaoCustomizado = styled.button<ButtonProps>`
   color: #FFF;
   font-size: 20px;
   border: 30px;
-  background-color: #6a6a6a;
+  background-color: #075e54;
   border-radius: 8px;
   width: 100%;
   max-width: 300px;
@@ -15,8 +15,8 @@ export const BotaoCustomizado = styled.button<ButtonProps>`
 
   ${props => props.disabled === false &&`
       &:hover{
-        background-color: #FFF;
-        color: #6a6a6a
+        background-color: #25d366;
+        color: #FFF
       }
     `
   }
