@@ -1,36 +1,21 @@
 import React, {useState} from 'react'
-import Input from '../Input/index'
-import Botao from '../Botao/index'
-import { Form } from './styles'
+import { Container, Form } from './styles'
+import NovoContato from '../NovoContato/index'
+import Filtro from '../Filtro/index'
 
 const Header = () => {
-  const [form, setForm] = useState({})
-  const [loading, setLoading] = useState()
-
-  const handleSubmit = async (e: any) => {
-    alert('Usuário Adicionado com Sucesso')
-  }
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    const {name, value} = event.target
-    setForm({...form, [name]: value})
-  }
+  const [newUser, setNewUser] = useState(true)
 
   return (
-      <Form>
-          <Input
-            name="email"
-            placeholder="Pesquisar por um contato"
-            type="email"
-            onChange={handleChange}
+      <Container>
+        <Form>
+          <Filtro
+            setNewUser={setNewUser}
+            newUser={newUser}
           />
-          <Botao
-            type="submit"
-            text="Adicionar Contato"
-            disabled={false}
-            onClick={handleSubmit}
-          />
-      </Form>
+          {newUser && <NovoContato/>}
+        </Form>
+      </Container>
   )
 }
 

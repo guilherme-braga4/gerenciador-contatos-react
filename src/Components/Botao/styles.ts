@@ -27,3 +27,13 @@ export const BotaoCustomizado = styled.button<ButtonProps>`
   }
   
 `
+export const BotaoIcone = styled.button<ButtonProps>`
+  color: #FFF;
+  font-size: 20px;
+  border: 30px;
+  border-radius: 8px;
+  height: 50px;
+  cursor: pointer;
+  background-color: transparent;
+  margin: 0 0 0 30px;
+`

@@ -1,21 +1,23 @@
 import React from 'react'
-import { BotaoCustomizado } from './styles'
+import { BotaoCustomizado, BotaoIcone } from './styles'
 import { ButtonProps } from './interface'
 
 const Botao = ({
   type, 
   text, 
   disabled, 
+  icon,
   onClick}: ButtonProps): JSX.Element => {
+    console.log('icon', icon)
   return ( 
-      <BotaoCustomizado
+      <BotaoIcone 
         type={type}
         text={text}
         disabled={disabled}
         onClick={onClick}
-      >
-        {text}
-      </BotaoCustomizado>
+        >
+         {icon}
+      </BotaoIcone> 
    );
 }
  

@@ -9,12 +9,12 @@ const Input = ({
   type, 
   onChange}: InputProps) : JSX.Element => {
   return ( 
-    <InputCustomizado
-      name={name}
-      type={type}
-      placeholder={placeholder}
-      onChange={onChange}
-    />
+      <InputCustomizado
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        onChange={onChange}
+      />
    );
 }
  
