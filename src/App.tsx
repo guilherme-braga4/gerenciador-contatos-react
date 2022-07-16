@@ -1,7 +1,7 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
+import Home from './Pages/Home/index'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
