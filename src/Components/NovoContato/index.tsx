@@ -4,38 +4,31 @@ import Botao from '../Botao/index'
 import { Container, Form } from './styles'
 import { FaUserAlt } from 'react-icons/fa';
 import { BsFillImageFill, BsFillTelephoneFill } from 'react-icons/bs';
+import { v4 as uuidv4 } from 'uuid';
+import { NovoContatoProps } from './interface'
 
 
-const NovoContato = () => {
+const NovoContato = ({setContatos, contatos}: NovoContatoProps) => {
   const [form, setForm] = useState<string[]>([])
-  const [loading, setLoading] = useState<boolean>(false)
-  const [contatos, setContatos] = useState<any[]>([])
-
-  // Recebendo os contatos através do localStorage
-  useEffect(() => {
-    const getContatos = async () => {
-    try {
-      //String || Null
-      const obterContatos = await JSON.parse(localStorage.getItem("user") || "[]")
-      setContatos(obterContatos)
-    } catch {
-      console.log('Erro ao carregar os contatos')
-    }
-  }
-    getContatos()
-  }, [])    
+  const [loading, setLoading] = useState<boolean>(false) 
 
   const handleSubmit = async (event: any) => {
     event?.preventDefault()
-    contatos.push(form)
-    localStorage.setItem('user', JSON.stringify(contatos))
-    alert('Usuário Criado com Sucesso')
+    console.log('handleSubmit')
+    //Atualizando o state Contatos
+    //----> Solução: O push funciona, porém, não altera o estado, pois retornaria um number. Por isso, deve-se concatenar os objetos no array
+    const novoContato = [...contatos, {...form, id: '2'}]
+    setContatos(novoContato)
+    //O state é montado depois do localStorage.setItem: existe atraso de 1 objeto
+    //---> Solução: criar na memória o novoContato, para ter disponível a atribuição no momento do localStorage.setItem
+    console.log('contatos 1', contatos)
+     localStorage.setItem('user', JSON.stringify(novoContato))
+    // alert('Usuário Criado com Sucesso')
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const {name, value} = event.target
     setForm({...form, [name]: value})
-    // console.log('Form', form)
   }
 
   return (

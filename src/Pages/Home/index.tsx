@@ -8,31 +8,33 @@ import Header from '../../Components/Header/index'
 const Home = () => {
   const [contatos, setContatos] = useState<any[]>([])
 
+  useEffect(() => {
+      const getContatos = async () => {
+      console.log("dentro do getContatos", contatos)
+      try {
+        //String || Null
+        //Carregando os contatos ao montar o componente Home
+        const obterContatos = await JSON.parse(localStorage.getItem("user") || "[]")
+        setContatos(obterContatos)
+        console.log('obterContatos', obterContatos)
+      } catch {
+        console.log('Erro ao carregar os contatos')
+      }
+    }
+      getContatos()
+  }, [])       
+
   interface contatos {
     imagem: string,
     nome: string,
     telefone: string
   };
 
-    // Recebendo os contatos através do localStorage
-  useEffect(() => {
-      const getContatos = async () => {
-      try {
-        //String || Null
-        const obterContatos = await JSON.parse(localStorage.getItem("user") || "[]")
-        setContatos(obterContatos)
-      } catch {
-        console.log('Erro ao carregar os contatos')
-      }
-    }
-      getContatos()
-  }, [])    
-
   return ( 
     <Container>
-      <Header/>
+      <Header setContatos={setContatos} contatos={contatos}/>
       <ListaContatos>
-        {contatos != [] && contatos.map((item: contatos) => {
+        {contatos.map((item: contatos) => {
           return (
           <Contato
             image={item.imagem}

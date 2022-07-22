@@ -3,12 +3,12 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: #dcf8c6;
   width: 100%;
   border-radius: 20px;
-  padding: 5px 0px;
+  padding: 5px 50px;
 
   img {
     border-radius: 30px;

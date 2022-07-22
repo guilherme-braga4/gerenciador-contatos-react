@@ -15,12 +15,8 @@ export const ListaContatos = styled.div`
   display: flex;
   padding: 3rem;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   background-color: #1ebea5;
-  border-radius: 5px;
+  border-radius: 25px;
   min-width: 1150px;
-  gap: 10px;
-  margin: 0px 0px 20px 0px;
-`
+  gap: 10px;`
 
