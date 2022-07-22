@@ -7,17 +7,30 @@ export const Container = styled.div`
   align-items: center;
   background-color: #dcf8c6;
   width: 100%;
-  border-radius: 20px;
-  padding: 5px 50px;
+  border-radius: 30px;
+  padding: 0px 0px;
 
   img {
     border-radius: 30px;
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
   }
 
   p {
     color: #000;
+    font-size: 18px;
+  }
+`
+
+export const SubContainer = styled.div`
+  display: flex;
+  width: 100%;
+  margin: 0px 20px;
+  justify-content: space-between;
+  align-items: center;
+  
+  div {
+    padding: 10px 0px;
   }
 `
 

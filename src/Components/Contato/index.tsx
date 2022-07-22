@@ -1,5 +1,5 @@
 import { ContatoProps } from './interface'
-import { Container } from './styles'
+import { Container, SubContainer } from './styles'
 import { AiFillDelete } from 'react-icons/ai';
 import Botao from '../Botao/index'
 
@@ -23,14 +23,18 @@ const Contato = ({
   return (
     <Container>
       <img src={image}/>
-      <p>{name}</p>
-      <p>{phone}</p>
+      <SubContainer>
+        <div>
+          <p>{name}</p>
+          <p>{phone}</p>
+        </div>
       <Botao
           type="submit"
-          icon={<AiFillDelete size={20} color={'#075e54'}/>}
+          icon={<AiFillDelete size={35} color={'#075e54'}/>}
           disabled={false}
           onClick={deleteContato}
       />
+      </SubContainer>
     </Container>
   )
 }
