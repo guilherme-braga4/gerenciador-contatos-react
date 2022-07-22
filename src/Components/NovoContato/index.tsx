@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import Input from '../Input/index'
 import Botao from '../Botao/index'
 import { Container, Form } from './styles'
-import { FaUserAlt } from 'react-icons/fa';
+import { FaUserAlt, FaSave } from 'react-icons/fa';
 import { BsFillImageFill, BsFillTelephoneFill } from 'react-icons/bs';
 import { v4 as uuidv4 } from 'uuid';
 import { NovoContatoProps } from './interface'
@@ -68,7 +68,7 @@ const NovoContato = ({setContatos, contatos}: NovoContatoProps) => {
             </Form>
             <Botao
               type="submit"
-              text="Salvar Contato"
+              icon={<FaSave size={50} color={'#075e54'}/>}
               disabled={false}
               onClick={handleSubmit}
             />
