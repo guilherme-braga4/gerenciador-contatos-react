@@ -1,4 +1,3 @@
-import React from 'react'
 import { ContatoProps } from './interface'
 import { Container } from './styles'
 import { AiFillDelete } from 'react-icons/ai';

@@ -8,7 +8,6 @@ const Botao = ({
   disabled, 
   icon,
   onClick}: ButtonProps): JSX.Element => {
-    console.log('icon', icon)
   return ( 
       <BotaoIcone 
         type={type}
@@ -16,7 +15,7 @@ const Botao = ({
         disabled={disabled}
         onClick={onClick}
         >
-         {icon}
+         {icon || text}
       </BotaoIcone> 
    );
 }

@@ -10,7 +10,7 @@ export const Container = styled.div`
   background-color: #273443;
   overflow-y: auto
 `
-
+// <JSX.Element|JSX.Element[]>
 export const ListaContatos = styled.div`
   display: flex;
   padding: 3rem;

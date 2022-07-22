@@ -4,7 +4,7 @@ import NovoContato from '../NovoContato/index'
 import Filtro from '../Filtro/index'
 
 const Header = () => {
-  const [newUser, setNewUser] = useState(true)
+  const [newUser, setNewUser] = useState(false)
 
   return (
       <Container>

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Container, ListaContatos } from './styles'
 import Contato from '../../Components/Contato/index'
 import Header from '../../Components/Header/index'
@@ -6,65 +6,41 @@ import Header from '../../Components/Header/index'
 // import { NavLink, useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const [contatos, setContatos] = useState<any[]>([])
+
+  interface contatos {
+    imagem: string,
+    nome: string,
+    telefone: string
+  };
+
+    // Recebendo os contatos através do localStorage
+  useEffect(() => {
+      const getContatos = async () => {
+      try {
+        //String || Null
+        const obterContatos = await JSON.parse(localStorage.getItem("user") || "[]")
+        setContatos(obterContatos)
+      } catch {
+        console.log('Erro ao carregar os contatos')
+      }
+    }
+      getContatos()
+  }, [])    
+
   return ( 
     <Container>
       <Header/>
       <ListaContatos>
-        <Contato
-          image='https://yt3.ggpht.com/HkTlTrMOJLr-8ARRK3UKDnQnD1fskZqaQy-Pffc_NOwTb16oM4uCk810f2drB-oljwNtLBeOPQ=s900-c-k-c0x00ffffff-no-rj'
-          name='Guilherme'
-          phone='15991851171'
+        {contatos != [] && contatos.map((item: contatos) => {
+          return (
+          <Contato
+            image={item.imagem}
+            name={item.nome}
+            phone={item.telefone}
         />
-        <Contato
-          image='https://yt3.ggpht.com/HkTlTrMOJLr-8ARRK3UKDnQnD1fskZqaQy-Pffc_NOwTb16oM4uCk810f2drB-oljwNtLBeOPQ=s900-c-k-c0x00ffffff-no-rj'
-          name='Guilherme'
-          phone='15991851171'
-        />
-        <Contato
-          image='https://yt3.ggpht.com/HkTlTrMOJLr-8ARRK3UKDnQnD1fskZqaQy-Pffc_NOwTb16oM4uCk810f2drB-oljwNtLBeOPQ=s900-c-k-c0x00ffffff-no-rj'
-          name='Guilherme'
-          phone='15991851171'
-        />
-        <Contato
-          image='https://yt3.ggpht.com/HkTlTrMOJLr-8ARRK3UKDnQnD1fskZqaQy-Pffc_NOwTb16oM4uCk810f2drB-oljwNtLBeOPQ=s900-c-k-c0x00ffffff-no-rj'
-          name='Guilherme'
-          phone='15991851171'
-        />
-        <Contato
-          image='https://yt3.ggpht.com/HkTlTrMOJLr-8ARRK3UKDnQnD1fskZqaQy-Pffc_NOwTb16oM4uCk810f2drB-oljwNtLBeOPQ=s900-c-k-c0x00ffffff-no-rj'
-          name='Guilherme'
-          phone='15991851171'
-        />
-        <Contato
-          image='https://yt3.ggpht.com/HkTlTrMOJLr-8ARRK3UKDnQnD1fskZqaQy-Pffc_NOwTb16oM4uCk810f2drB-oljwNtLBeOPQ=s900-c-k-c0x00ffffff-no-rj'
-          name='Guilherme'
-          phone='15991851171'
-        />
-        <Contato
-          image='https://yt3.ggpht.com/HkTlTrMOJLr-8ARRK3UKDnQnD1fskZqaQy-Pffc_NOwTb16oM4uCk810f2drB-oljwNtLBeOPQ=s900-c-k-c0x00ffffff-no-rj'
-          name='Guilherme'
-          phone='15991851171'
-        />
-        <Contato
-          image='https://yt3.ggpht.com/HkTlTrMOJLr-8ARRK3UKDnQnD1fskZqaQy-Pffc_NOwTb16oM4uCk810f2drB-oljwNtLBeOPQ=s900-c-k-c0x00ffffff-no-rj'
-          name='Guilherme'
-          phone='15991851171'
-        />
-        <Contato
-          image='https://yt3.ggpht.com/HkTlTrMOJLr-8ARRK3UKDnQnD1fskZqaQy-Pffc_NOwTb16oM4uCk810f2drB-oljwNtLBeOPQ=s900-c-k-c0x00ffffff-no-rj'
-          name='Guilherme'
-          phone='15991851171'
-        />
-        <Contato
-          image='https://yt3.ggpht.com/HkTlTrMOJLr-8ARRK3UKDnQnD1fskZqaQy-Pffc_NOwTb16oM4uCk810f2drB-oljwNtLBeOPQ=s900-c-k-c0x00ffffff-no-rj'
-          name='Guilherme'
-          phone='15991851171'
-        />
-        <Contato
-          image='https://yt3.ggpht.com/HkTlTrMOJLr-8ARRK3UKDnQnD1fskZqaQy-Pffc_NOwTb16oM4uCk810f2drB-oljwNtLBeOPQ=s900-c-k-c0x00ffffff-no-rj'
-          name='Guilherme'
-          phone='15991851171'
-        />
+        )
+        })}
       </ListaContatos>
     </Container>
    );

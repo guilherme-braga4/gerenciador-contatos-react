@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Input from '../Input/index'
 import Botao from '../Botao/index'
 import { Container, Form } from './styles'
@@ -7,16 +7,35 @@ import { BsFillImageFill, BsFillTelephoneFill } from 'react-icons/bs';
 
 
 const NovoContato = () => {
-  const [form, setForm] = useState({})
-  const [loading, setLoading] = useState()
+  const [form, setForm] = useState<string[]>([])
+  const [loading, setLoading] = useState<boolean>(false)
+  const [contatos, setContatos] = useState<any[]>([])
 
-  const handleSubmit = async (e: any) => {
+  // Recebendo os contatos através do localStorage
+  useEffect(() => {
+    const getContatos = async () => {
+    try {
+      //String || Null
+      const obterContatos = await JSON.parse(localStorage.getItem("user") || "[]")
+      setContatos(obterContatos)
+    } catch {
+      console.log('Erro ao carregar os contatos')
+    }
+  }
+    getContatos()
+  }, [])    
+
+  const handleSubmit = async (event: any) => {
+    event?.preventDefault()
+    contatos.push(form)
+    localStorage.setItem('user', JSON.stringify(contatos))
     alert('Usuário Criado com Sucesso')
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     const {name, value} = event.target
     setForm({...form, [name]: value})
+    // console.log('Form', form)
   }
 
   return (
