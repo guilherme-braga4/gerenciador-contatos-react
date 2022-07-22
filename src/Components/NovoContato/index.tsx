@@ -17,7 +17,7 @@ const NovoContato = ({setContatos, contatos}: NovoContatoProps) => {
     console.log('handleSubmit')
     //Atualizando o state Contatos
     //----> Solução: O push funciona, porém, não altera o estado, pois retornaria um number. Por isso, deve-se concatenar os objetos no array
-    const novoContato = [...contatos, {...form, id: '2'}]
+    const novoContato = [...contatos, {...form, id: uuidv4()}]
     setContatos(novoContato)
     //O state é montado depois do localStorage.setItem: existe atraso de 1 objeto
     //---> Solução: criar na memória o novoContato, para ter disponível a atribuição no momento do localStorage.setItem
