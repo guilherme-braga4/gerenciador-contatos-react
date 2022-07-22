@@ -27,19 +27,24 @@ const Home = () => {
   interface contatos {
     imagem: string,
     nome: string,
-    telefone: string
+    telefone: string,
+    id: string
   };
 
   return ( 
     <Container>
       <Header setContatos={setContatos} contatos={contatos}/>
       <ListaContatos>
-        {contatos.map((item: contatos) => {
+        {contatos.map((item: contatos, index: number) => {
           return (
           <Contato
             image={item.imagem}
             name={item.nome}
             phone={item.telefone}
+            id={item.id}
+            index={index}
+            setContatos={setContatos}
+            contatos={contatos}
         />
         )
         })}
