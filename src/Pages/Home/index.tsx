@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Container, ListaContatos } from './styles'
 import Contato from '../../Components/Contato/index'
 import Header from '../../Components/Header/index'
-// import {validarEmail, validarSenha} from '../../utils/validadores'
-// import { NavLink, useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [contatos, setContatos] = useState<any[]>([])
@@ -30,6 +28,7 @@ const Home = () => {
     telefone: string
     id: string
   }
+  
 
   return (
     <Container>

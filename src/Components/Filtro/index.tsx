@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { FiltroProps } from './interface'
-import { Container } from './styles'
-import { IoMdCloseCircle, IoMdPersonAdd } from 'react-icons/io'
+import { Container, IconeFechar, IconeAdicionarContato } from './styles'
 import Input from '../Input/index'
 import Botao from '../Botao/index'
 
@@ -56,14 +55,14 @@ const Filtro = ({ setNewUser, newUser, setContatos }: FiltroProps) => {
       {newUser ? (
         <Botao
           type="submit"
-          icon={<IoMdCloseCircle size={50} color={'#075e54'} />}
+          icon={<IconeFechar/>}
           disabled={false}
           onClick={() => setNewUser(!newUser)}
         />
       ) : (
         <Botao
           type="submit"
-          icon={<IoMdPersonAdd size={50} color={'#075e54'} />}
+          icon={<IconeAdicionarContato/>}
           disabled={false}
           onClick={() => setNewUser(!newUser)}
         />

@@ -1,4 +1,20 @@
 import styled from 'styled-components'
+import { AiFillDelete } from 'react-icons/ai'
+
+export const IconeApagar = styled(AiFillDelete)`
+  color: #273443;
+  height: 30px;
+  width: 30px;
+  margin: 0;
+
+  &:hover {
+    transition: 0.3s;
+    transform: rotate(360deg);
+    color: #c70039;
+    height: 40px;
+    width: 40px;
+  }
+`
 
 export const Container = styled.div`
   display: flex;
@@ -9,6 +25,12 @@ export const Container = styled.div`
   width: 100%;
   border-radius: 30px;
   padding: 0px 0px;
+
+  &:hover {
+    transition: 0.3s;
+    margin: 0 10px;
+    background-color: #e7fad8;
+  }
 
   img {
     border-radius: 30px;

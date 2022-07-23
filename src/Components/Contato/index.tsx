@@ -1,6 +1,5 @@
 import { ContatoProps } from './interface'
-import { Container, SubContainer } from './styles'
-import { AiFillDelete } from 'react-icons/ai'
+import { Container, SubContainer, IconeApagar } from './styles'
 import Botao from '../Botao/index'
 
 const Contato = ({
@@ -29,7 +28,7 @@ const Contato = ({
         </div>
         <Botao
           type="submit"
-          icon={<AiFillDelete size={35} color={'#075e54'} />}
+          icon={<IconeApagar/>}
           disabled={false}
           onClick={deleteContato}
         />

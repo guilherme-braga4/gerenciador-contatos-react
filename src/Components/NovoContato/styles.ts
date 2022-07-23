@@ -1,4 +1,18 @@
 import styled from 'styled-components'
+import { FaSave } from 'react-icons/fa'
+
+export const IconeSalvar = styled(FaSave)`
+  color: #273443;
+  height: 40px;
+  width: 40px;
+  margin: 0;
+
+  &:hover {
+    color: #dcf8c6;
+    transition: 0.5s;
+    height: 60px;
+  }
+`
 
 export const Container = styled.div`
   display: flex;
@@ -15,5 +29,6 @@ export const Container = styled.div`
 export const Form = styled.div`
   display: flex;
   align-items: center;
-  gap: 0px 10px;
+  gap: 0px 12px;
+  width: 100%;
 `

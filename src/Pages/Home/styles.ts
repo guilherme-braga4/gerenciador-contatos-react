@@ -19,4 +19,5 @@ export const ListaContatos = styled.div`
   border-radius: 25px;
   min-width: 1150px;
   gap: 25px;
+  transition: 5s;
 `
