@@ -1,4 +1,4 @@
 export interface NovoContatoProps {
-  contatos: any[];
-  setContatos: React.Dispatch<React.SetStateAction<any>>;
+  contatos: any[]
+  setContatos: React.Dispatch<React.SetStateAction<any>>
 }

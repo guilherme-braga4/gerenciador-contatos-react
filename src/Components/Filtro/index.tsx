@@ -5,11 +5,7 @@ import { IoMdCloseCircle, IoMdPersonAdd } from 'react-icons/io'
 import Input from '../Input/index'
 import Botao from '../Botao/index'
 
-const Filtro = ({
-  setNewUser,
-  newUser,
-  setContatos,
-}: FiltroProps) => {
+const Filtro = ({ setNewUser, newUser, setContatos }: FiltroProps) => {
   const [filtro, setFiltro] = useState<string>()
   //O data State garante o o array completo de contatos
   const [data, setData] = useState<any[]>()

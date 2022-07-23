@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const Container = styled.div`
   height: 100vh;
   min-width: 100vw;
   background-color: #273443;
-  overflow-y: auto
+  overflow-y: auto;
 `
 // <JSX.Element|JSX.Element[]>
 export const ListaContatos = styled.div`
@@ -18,5 +18,5 @@ export const ListaContatos = styled.div`
   background-color: #1ebea5;
   border-radius: 25px;
   min-width: 1150px;
-  gap: 25px;`
-
+  gap: 25px;
+`

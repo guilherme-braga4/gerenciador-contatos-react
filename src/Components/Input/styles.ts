@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 import { InputProps } from './interface'
 
 export const InputCustomizado = styled.input<InputProps>`
-  color: #FFF;
+  color: #fff;
   height: 50px;
   font-size: 16px;
   background-color: transparent;
@@ -12,5 +12,3 @@ export const InputCustomizado = styled.input<InputProps>`
   padding: 16px 20px;
   width: 100%;
 `
-
-
