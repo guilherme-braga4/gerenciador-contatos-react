@@ -13,8 +13,13 @@ const Header = ({setContatos, contatos}: NovoContatoProps) => {
           <Filtro
             setNewUser={setNewUser}
             newUser={newUser}
+            setContatos={setContatos} 
+            contatos={contatos}
           />
-          {newUser && <NovoContato setContatos={setContatos} contatos={contatos}/>}
+          {newUser && <NovoContato 
+            setContatos={setContatos} 
+            contatos={contatos}
+          />}
         </Form>
       </Container>
   )

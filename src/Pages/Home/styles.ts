@@ -18,5 +18,5 @@ export const ListaContatos = styled.div`
   background-color: #1ebea5;
   border-radius: 25px;
   min-width: 1150px;
-  gap: 10px;`
+  gap: 25px;`
 

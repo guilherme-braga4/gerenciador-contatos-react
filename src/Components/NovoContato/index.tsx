@@ -12,7 +12,7 @@ const NovoContato = ({setContatos, contatos}: NovoContatoProps) => {
   const [form, setForm] = useState<string[]>([])
   const [loading, setLoading] = useState<boolean>(false) 
 
-  const handleSubmit = async (event: any) => {
+  const createContato = async (event: any) => {
     event?.preventDefault()
     console.log('handleSubmit')
     //Atualizando o state Contatos
@@ -70,7 +70,7 @@ const NovoContato = ({setContatos, contatos}: NovoContatoProps) => {
               type="submit"
               icon={<FaSave size={50} color={'#075e54'}/>}
               disabled={false}
-              onClick={handleSubmit}
+              onClick={createContato}
             />
       </Container>
   )
