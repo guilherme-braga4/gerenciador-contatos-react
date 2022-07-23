@@ -6,7 +6,23 @@ import Header from '../../Components/Header/index'
 // import { NavLink, useNavigate } from "react-router-dom";
 
 const Home = () => {
-  const [contatos, setContatos] = useState<any[]>([])    
+  const [contatos, setContatos] = useState<any[]>([])
+  
+  //Função para obter os Contatos
+  useEffect(() => {
+    const getContatos = async () => {
+      try {
+        //String || Null
+        const obterContatos = await JSON.parse(
+          localStorage.getItem('user') || '[]'
+        )
+        setContatos(obterContatos)
+      } catch {
+        console.log('Erro ao carregar os contatos')
+      }
+    }
+    getContatos()
+  }, [])
 
   interface contatos {
     imagem: string,
